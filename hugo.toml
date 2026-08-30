@@ -23,7 +23,7 @@ enableGitInfo = false
   startLevel = 1
 
 [markup.highlight]
-  style = 'base16-snazzy'
+  style = 'tokyonight-moon'
 
 [params]
   BookTheme = 'dark'
