@@ -1,0 +1,7 @@
+{{- $path := .Get 0 -}}
+
+{{- with .Page.Resources.Get $path -}}
+{{- .Content | safeHTML -}}
+{{- else -}}
+  {{- errorf "Unable to find code file %q: see %s" $path $.Position -}}
+{{- end -}}
