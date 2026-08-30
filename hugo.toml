@@ -21,7 +21,7 @@ enableGitInfo = false
 
 [markup.tableOfContents]
   startLevel = 1
-  endLevel = 1
+  endLevel = 2
 
 [markup.highlight]
   style = 'base16-snazzy'

@@ -114,3 +114,88 @@ Yes, I recommend use, because it's cleaner and easier to understand.
 
 Original program calls 15720 times `isplaceok`, the new one calls 34112320 times.
 
+# chapter 03
+
+## 3.1
+
+`.0e12`, `0x12`, `0xA`, `0xFFFFFFFF`, `0x1P10`, `0.1e1`, `0x0.1p1` are valid numerals.
+
+{{< 
+    asciinema
+    cast="./asciinema/chapter03/1.cast"
+    loop=true
+    autoplay=true
+    speed=2 
+>}}
+
+## 3.2
+
+```
+result1 = (math.maxinteger * 2) % (2^64)
+        = (0x7FFF_FFFF_FFFF_FFFF * 2) % (2^64)
+        = ((2^63 - 1) * 2) % (2^64)
+        = (2^64 % 2^64) - (2 % 2^64)
+        = -2
+
+result2 = (math.mininteget * 2) % (2^64)
+        = (0x8000_0000_0000_0000 * 2) % (2^64)
+        = (2^63 * 2) % (2^64)
+        = 0
+
+result3 = (math.maxinteger * math.maxinteger)  % (2^64)
+        = (0x7FFF_FFFF_FFFF_FFFF * 0x7FFF_FFFF_FFFF_FFFF) % (2^64)
+        = ((2^63 - 1) * (2^63 - 1)) % (2^64)
+        = ((2^126) % (2^64)) + (1 % (2^64)) - ((2 * 2^63) % (2^64))
+        = 0 + 1 - 0
+        = 1
+
+result4 = (math.mininteger * math.mininteger)  % (2^64)
+        = (0x8000_0000_0000_0000 * 0x8000_0000_0000_0000) % (2^64)
+        = ((2^63) * (2^63)) % (2^64)
+        = ((2^126) % (2^64))
+        = 0
+```
+
+## 3.3
+
+```lua
+{{% codefile "./codesource/chapter03/3.lua" %}}
+```
+
+{{< 
+    asciinema
+    cast="./asciinema/chapter03/2.cast"
+    loop=true
+    autoplay=true
+    speed=2 
+>}}
+
+## 3.4
+
+{{< 
+    asciinema
+    cast="./asciinema/chapter03/3.cast"
+    loop=true
+    autoplay=true
+    speed=2 
+>}}
+
+## 3.5
+
+`12.7` cannot be expressed as a common fraction where the denominator is a power of two.
+
+`5.5 = 11 / 2`
+
+## 3.6
+
+```lua
+{{% codefile "./codesource/chapter03/6.lua" %}}
+```
+
+## 3.7
+
+```lua
+{{% codefile "./codesource/chapter03/7.lua" %}}
+```
+
+# chapter 04
