@@ -97,3 +97,20 @@ Yes, I recommend use, because it's cleaner and easier to understand.
 ```lua
 {{% codefile "./codesource/chapter01/8.lua" %}}
 ```
+
+# chapter 02
+
+## 2.1
+
+```lua
+{{% codefile "./codesource/chapter02/1.lua" %}}
+```
+
+## 2.2
+
+```lua
+{{% codefile "./codesource/chapter02/2.lua" %}}
+```
+
+Original program calls 15720 times `isplaceok`, the new one calls 34112320 times.
+
