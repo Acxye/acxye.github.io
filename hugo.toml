@@ -1,0 +1,46 @@
+baseURL = 'https://acxye.github.io/'
+title = "Acxye's Book"
+theme = 'hugo-book-0.14.0'
+copyright = '[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)'
+
+disablePathToLower = true
+enableGitInfo = false
+
+[outputFormats.txt]
+  mediaType = 'text/plain'
+  baseName = 'source'
+  isPlainText = true
+
+[outputs]
+  home = ['html', 'txt', 'rss']
+  page = ['html', 'txt']
+  section = ['html', 'txt']
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+[markup.highlight]
+  style = 'base16-snazzy'
+
+[params]
+  BookTheme = 'dark'
+  BookToC = true
+  # BookFavicon = 'favicon.png'
+  # BookLogo = 'logo.png'
+  BookSection = '*'
+  # BookRepo = 'https://github.com/alex-shpak/hugo-book/'
+  # BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
+  # BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/exampleSite/{{ .Path }}'
+  BookDateFormat = 'January 2, 2006'
+  BookSearch = true
+  BookComments = false
+  # BookPortableLinks = 'warning'
+  # BookServiceWorker = 'precache'
+  # BookTranslatedOnly = false
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
