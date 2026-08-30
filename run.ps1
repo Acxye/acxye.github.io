@@ -4,4 +4,5 @@ hugo server `
   --cleanDestinationDir=true `
   --logLevel=debug `
   --gc `
-  --renderToMemory
+  --renderToMemory `
+  --port 1313

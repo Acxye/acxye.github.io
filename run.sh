@@ -1,7 +1,0 @@
-hugo server \
-  --printPathWarnings \
-  --disableFastRender \
-  --cleanDestinationDir=true \
-  --logLevel=debug \
-  --gc \
-  --renderToMemory
