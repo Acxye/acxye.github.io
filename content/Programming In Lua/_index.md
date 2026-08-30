@@ -20,3 +20,7 @@ It's not notes, just exercises.
 
 ## 1.1
 
+```lua
+{{% codefile "src/chapter01/1.1.lua" %}}
+```
+
