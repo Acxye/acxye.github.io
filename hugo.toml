@@ -21,9 +21,11 @@ enableGitInfo = false
 
 [markup.tableOfContents]
   startLevel = 1
+  endLevel = 1
 
 [markup.highlight]
   style = 'base16-snazzy'
+  lineNos = true
 
 [params]
   BookTheme = 'dark'
