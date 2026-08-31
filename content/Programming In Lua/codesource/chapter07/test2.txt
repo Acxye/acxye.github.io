@@ -1,0 +1,6 @@
+
+
+    print(table.unpack(array))
+end
+function print_array (array)
+print_array({1, "a", "ddd"})

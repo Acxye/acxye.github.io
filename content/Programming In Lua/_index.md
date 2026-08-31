@@ -130,7 +130,7 @@ Original program calls 15720 times `isplaceok`, the new one calls 34112320 times
 
 ## 3.2
 
-```
+```text
 result1 = (math.maxinteger * 2) % (2^64)
         = (0x7FFF_FFFF_FFFF_FFFF * 2) % (2^64)
         = ((2^63 - 1) * 2) % (2^64)
@@ -273,3 +273,278 @@ due to the limit of stack of Lua, max len of lines should be smaller than 2^20 /
 {{% codefile "./codesource/chapter04/9.lua" %}}
 ```
 
+# chapter 05
+
+## 5.1
+
+`monday`, `sunday`, `sunday`
+
+```text
+t = {sunday = "monday", [sunday] = monday}
+  = {["sunday"] = "monday", value_of_var_sunday = value_of_var_monday}
+  = {["sunday"] = "monday", ["monday"] = "sunday"}
+  
+t.sunday = t["sunday"]
+t[sunday] = t[value_of_var_sunday] = t["monday"]
+t[t.sunday] = t[t["sunday"]] = t["monday"]
+```
+
+## 5.2
+
+`{}`, print table: 0x....
+
+Yes.
+
+The first `a` is the name of the var hold the reference to the table.
+
+The second `a` is the filed of the table mentioned above.
+
+The third `a` is same as the second.
+
+The forth `a` is same as the second.
+
+Wrong, the tbl become `{["a"] = 3}`, `a.a = 3`, `3.a` will result in error.
+
+## 5.3
+
+```lua
+escape_seq_map = {
+    ["\\n"] = "newline",
+    ...
+}
+```
+
+## 5.4
+
+```lua
+{{% codefile "./codesource/chapter05/4.lua" %}}
+```
+
+## 5.5
+
+```lua
+{{% codefile "./codesource/chapter05/5.lua" %}}
+```
+
+## 5.6
+
+```lua
+{{% codefile "./codesource/chapter05/6.lua" %}}
+```
+
+## 5.7
+
+```lua
+{{% codefile "./codesource/chapter05/7.lua" %}}
+```
+
+## 5.8
+
+```lua
+{{% codefile "./codesource/chapter05/8.1.lua" %}}
+```
+
+```lua
+{{% codefile "./codesource/chapter05/8.2.lua" %}}
+```
+
+{{< 
+    asciinema
+    cast="./asciinema/chapter05/1.cast"
+    loop=true
+    autoplay=true
+    speed=1.5
+>}}
+
+My version is much slower than the one in stdlib.
+
+# chapter 06
+
+## 6.1
+
+```lua
+{{% codefile "./codesource/chapter06/1.lua" %}}
+```
+
+## 6.2
+
+```lua
+{{% codefile "./codesource/chapter06/2.lua" %}}
+```
+
+## 6.3
+
+```lua
+{{% codefile "./codesource/chapter06/3.lua" %}}
+```
+
+## 6.4
+
+```lua
+{{% codefile "./codesource/chapter06/4.lua" %}}
+```
+
+## 6.5
+
+```lua
+{{% codefile "./codesource/chapter06/5.lua" %}}
+```
+
+## 6.5
+
+```lua
+{{% codefile "./codesource/chapter06/6.lua" %}}
+```
+
+# chapter 07
+
+## 7.1
+
+```lua
+{{% codefile "./codesource/chapter07/1.lua" %}}
+```
+
+## 7.2
+
+```lua
+{{% codefile "./codesource/chapter07/2.lua" %}}
+```
+
+## 7.3
+
+```lua
+{{% codefile "./codesource/chapter07/3.1.lua" %}}
+```
+
+```lua
+{{% codefile "./codesource/chapter07/3.2.lua" %}}
+```
+
+```lua
+{{% codefile "./codesource/chapter07/3.3.lua" %}}
+```
+
+```lua
+{{% codefile "./codesource/chapter07/3.4.lua" %}}
+```
+
+{{< 
+    asciinema
+    cast="./asciinema/chapter07/1.cast"
+    loop=true
+    autoplay=true
+    speed=1.5
+>}}
+
+
+Almost the max size of stack in lua.
+
+AI says its limited by the max size of alocated heap size, because the file will be store on the heap.
+
+## 7.4
+
+```lua
+{{% codefile "./codesource/chapter07/4.lua" %}}
+```
+
+## 7.5
+
+```lua
+{{% codefile "./codesource/chapter07/5.lua" %}}
+```
+
+## 7.6
+
+```lua
+{{% codefile "./codesource/chapter07/6.1.lua" %}}
+```
+
+```lua
+{{% codefile "./codesource/chapter07/6.2.lua" %}}
+```
+
+## 7.7
+
+No, `os.execute` will start a child shell to run command.
+
+# chapter 08
+
+## 8.1
+
+There is a `elseif` in C actually.
+
+## 8.2
+
+```lua
+repeat
+    -- loop body
+until false
+
+while true do
+    -- loop body
+end
+
+for _ = 1, math.huge do
+    -- loop body
+end
+
+::loop::
+    -- loop body
+goto loop
+```
+
+## 8.3
+
+No, `repeat--until` is quite convenient, because it condition's could use local var in loop.
+
+## 8.4
+
+```lua
+{{% codefile "./codesource/chapter08/4.lua" %}}
+```
+
+## 8.5
+
+Stack frame, if goto can jump out of a function, how do the interpreter knows when to free the stack.
+
+## 8.6
+
+Pass
+
+# chapter 09
+
+## 9.1
+
+```lua
+{{% codefile "./codesource/chapter09/1.lua" %}}
+```
+
+## 9.2
+
+```lua
+{{% codefile "./codesource/chapter09/2.lua" %}}
+```
+
+10 20
+
+300 100
+
+## 9.3
+
+```lua
+{{% codefile "./codesource/chapter09/3.lua" %}}
+```
+
+## 9.4
+
+```lua
+{{% codefile "./codesource/chapter09/4.lua" %}}
+```
+
+## 9.5
+
+```lua
+{{% codefile "./codesource/chapter09/5.lua" %}}
+```
+
+# chapter 10
