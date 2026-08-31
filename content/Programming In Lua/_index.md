@@ -199,3 +199,77 @@ result4 = (math.mininteger * math.mininteger)  % (2^64)
 ```
 
 # chapter 04
+
+## 4.1
+
+```lua
+local text = [=[
+<![CDATA]
+  Hello world
+]]>
+]=]
+
+local line1 = "<![CDATA]"
+local line2 = "Hello world"
+local line3 = "]]>"
+```
+
+## 4.2
+
+```lua
+a_long_string = [[
+line1
+line2
+line3
+.....
+]]
+
+--[[
+The max length of a single line is decided by the max lenght of my screen.
+Or just 80, 120 characters.
+due to the limit of stack of Lua, max len of lines should be smaller than 2^20 // max_len_of_line
+]]
+```
+
+## 4.3
+
+```lua
+{{% codefile "./codesource/chapter04/3.lua" %}}
+```
+
+## 4.4
+
+```lua
+{{% codefile "./codesource/chapter04/4.lua" %}}
+```
+
+## 4.5
+
+```lua
+{{% codefile "./codesource/chapter04/5.lua" %}}
+```
+
+## 4.6
+
+```lua
+{{% codefile "./codesource/chapter04/6.lua" %}}
+```
+
+## 4.7
+
+```lua
+{{% codefile "./codesource/chapter04/7.lua" %}}
+```
+
+## 4.8
+
+```lua
+{{% codefile "./codesource/chapter04/8.lua" %}}
+```
+
+## 4.9
+
+```lua
+{{% codefile "./codesource/chapter04/9.lua" %}}
+```
+
