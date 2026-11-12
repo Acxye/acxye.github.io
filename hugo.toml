@@ -1,0 +1,44 @@
+baseURL = "https://acxye.github.io/"
+title = "Acxye's Book"
+theme = "hugo-book"
+
+caches.images.dir = ":cacheDir/images"
+
+disablePathToLower = true
+enableGitInfo = false
+
+[markup.goldmark.renderer]
+    unsafe = true
+[markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+[markup.highlight]
+    style = "tokyonight-moon"
+    lineNos = true
+    lineNumbersInTable = false
+
+[params]
+    BookTheme = "dark"
+    BookToC = true
+    # BookBreadcrumbs = false
+    # BookPageLinks = false
+    # BookLogo = ""
+    BookSection = "*"
+    # BookRepo = ""
+    # BookLastChangeLink = ""
+    # BookEditLink = ""
+    BookDateFormat = "January 2, 2006"
+    BookSearch = false
+    # BookComments = false
+    # BookPortableLinks = ""
+    # BookServiceWorker = ""
+
+[outputFormats.txt]
+    mediaType = "text/plain"
+    baseName = "source"
+    isPlainText = true
+
+[outputs]
+    home = ["html", "txt", "rss"]
+    page = ["html", "txt"]
+    section = ["html", "txt"]
